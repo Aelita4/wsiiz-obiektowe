@@ -45,10 +45,18 @@ public class Main {
         System.out.println("=== Zadanie 4 (silnia exception) ===");
         int x = scanner.nextInt();
         try {
-            if (x < 0) throw new BlednaWartoscDlaSilniException();
+            if (x < 0) throw new BlednaWartoscDlaSilniException("Silnia nie moze byc liczona z wartosci <0");
         } catch(BlednaWartoscDlaSilniException e) {
             System.out.println("Bledna wartosc silnii");
         }
+        
+        int result = 1;
+        
+        for(int i = 2; i <= x; i++) {
+            wynik *= i;   
+        }
+        
+        System.out.println(wynik);
 
 
         System.out.println("=== Zadanie 5 (adres exception) ===");
